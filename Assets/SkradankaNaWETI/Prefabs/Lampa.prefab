@@ -41,7 +41,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.97396225, b: 0.88235295, a: 1}
   m_Intensity: 1
   m_Range: 40
   m_SpotAngle: 80
@@ -202,7 +202,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.972549, b: 0.88235295, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -241,7 +241,6 @@ GameObject:
   - component: {fileID: 8774050995436958530}
   - component: {fileID: 8774050995436958529}
   - component: {fileID: 8774050995436958528}
-  - component: {fileID: 8774050995436958531}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -308,19 +307,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8774050995436958531
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774050995436958533}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8774050996549826517
 GameObject:
   m_ObjectHideFlags: 0
