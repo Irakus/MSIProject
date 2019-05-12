@@ -8,9 +8,9 @@ public class ChasingBehaviour : StateMachineBehaviour
     Vector3 chaseTarget;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        chaseTarget = GameObject.FindGameObjectWithTag("Player").transform.position;
+        
 
-        animator.gameObject.transform.Find("/AngryPersonnelVoice").gameObject.GetComponent<AudioSource>().Play();
+        animator.gameObject.transform.Find("AngryPersonnelVoice").gameObject.GetComponent<AudioSource>().Play();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
