@@ -8,13 +8,15 @@ public class LightTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name=="FPSController")
-            _visibilityCounter.Increment();
+        Visibility v = other.GetComponent<Visibility>();
+        if(v != null)
+            v.Increment();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "FPSController")
-            _visibilityCounter.Decrement();
+        Visibility v = other.GetComponent<Visibility>();
+        if (v != null)
+            v.Decrement();
     }
 }
