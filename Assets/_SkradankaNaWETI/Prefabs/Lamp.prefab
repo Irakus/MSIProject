@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8590836494488625237}
   - component: {fileID: 6141302316635636065}
   - component: {fileID: 8111629393929595899}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Inner Light Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 5654142283202657857}
   - component: {fileID: 7663216466340092090}
   - component: {fileID: 153633878}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Outer Light Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
