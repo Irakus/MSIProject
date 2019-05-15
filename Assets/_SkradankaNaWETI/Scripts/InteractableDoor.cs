@@ -31,6 +31,14 @@ public class InteractableDoor : MonoBehaviour, IInteractable
         }
     }
 
+    public bool Available
+    {
+        get
+        {
+            return _status != DoorStatus.Inbetween;
+        }
+    }
+
     public void Interact()
     {
         if (_status == DoorStatus.Closed)
@@ -46,7 +54,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
         var startTime = Time.time;
         while (Time.time - startTime < actionTime)
         {
-            transform.rotation = Quaternion.Slerp(_openRotation, _closedRotation, (Time.time - startTime) * 2);
+            transform.rotation = Quaternion.Slerp(_openRotation, _closedRotation, (Time.time - startTime) / actionTime);
             yield return null;
         };
         _status = DoorStatus.Closed;
@@ -59,7 +67,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
         var startTime = Time.time;
         while (Time.time-startTime<actionTime)
         {
-            transform.rotation = Quaternion.Slerp(_closedRotation, _openRotation, (Time.time - startTime)*2);
+            transform.rotation = Quaternion.Slerp(_closedRotation, _openRotation, (Time.time - startTime) / actionTime);
             yield return null;
         };
         _status = DoorStatus.Open;

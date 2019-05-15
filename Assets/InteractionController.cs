@@ -38,7 +38,7 @@ public class InteractionController : MonoBehaviour
             if (hasHit)
             {
                 _interactionTarget = hit.collider.GetComponent<IInteractable>();
-                if (_interactionTarget != null)
+                if (_interactionTarget != null && _interactionTarget.Available)
                 {
                     _panel.gameObject.SetActive(true);
                     _text.text = _interactionTarget.ActionDescription;

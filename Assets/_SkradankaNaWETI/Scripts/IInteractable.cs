@@ -5,5 +5,6 @@ using UnityEngine;
 interface IInteractable
 {
     string ActionDescription { get; }
+    bool Available { get; }
     void Interact();
 }
