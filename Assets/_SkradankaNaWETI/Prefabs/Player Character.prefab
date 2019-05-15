@@ -90,10 +90,10 @@ MonoBehaviour:
       temporalReprojectionFactor: 0.9
       resolution: {x: 160, y: 88, z: 128}
       farClipPlaneDistance: 50
-      density: 0.2
+      density: 0.5
       anisotropy: 0.565
-      color: {r: 0.09140049, g: 0.13303, b: 0.25, a: 1}
-      colorStrength: 0.1
+      color: {r: 0.1314885, g: 0.16625693, b: 0.25, a: 1}
+      colorStrength: 2
     _computeMaximumDepthComputeShader: {fileID: 7200000, guid: a5d52c8a306e8b746ab60b306575aa3e,
       type: 3}
     _processOcclusionMapShader: {fileID: 4800000, guid: b9b5b0990ea6cfa4d96c89a9c1cec3e9,
