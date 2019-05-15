@@ -17,12 +17,14 @@ public class OutsideTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject.FindObjectOfType<GameManager>().Escaped();
         StopCoroutine("ActivateLpf");
         StartCoroutine("RemoveLpf");
     }
 
     private void OnTriggerExit(Collider other)
     {
+        
         StopCoroutine("RemoveLpf");
         StartCoroutine("ActivateLpf");
     }

@@ -28,6 +28,7 @@ public class QuestPendrive : MonoBehaviour, IInteractable
         var emission = _particleSystem.emission;
         emission.enabled = false;
         _pendriveTaken = true;
+        GameObject.FindObjectOfType<GameManager>().PendriveTaken();
         Debug.Log("Zdobyłeś Pendrive!");
     }
 
