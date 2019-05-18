@@ -11,11 +11,14 @@ public class Ears : MonoBehaviour
 
     private bool followSound;
 
+    [SerializeField]
     private Transform target;
-    void OnStart()
+    void Start()
     {
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         animator = gameObject.GetComponent<Animator>();
+
+        followSound = false;
     }
     public void Hear(Transform noise)
     {
@@ -27,7 +30,7 @@ public class Ears : MonoBehaviour
     {
         if (followSound)
         {
-            if (Vector3.Distance(transform.position, target.position) < 1.0f)
+            if (Vector3.Distance(transform.position, target.position) < 2.0f)
             {
                 animator.SetBool("heardSomething", false);
                 return;
