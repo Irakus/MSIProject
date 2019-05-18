@@ -16,6 +16,7 @@ public class PatrolStations : MonoBehaviour
     {
         currentStation = stations[0];
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+        animator = gameObject.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -50,6 +51,8 @@ public class PatrolStations : MonoBehaviour
             {
                 currentStation = stations[stations.IndexOf(currentStation) + 1];
             }
+            animator.SetBool("isOnPatrolPoint",true);
+
         }
     }
 }

@@ -5,8 +5,11 @@ using UnityEngine.AI;
 
 public class LookForIntruders : MonoBehaviour
 {
-    public float lookRadius = 5.0f;
-    public float lookDistance = 10.0f;
+    public float lookRadius = 2.0f;
+    private float darkViewDistance = 6.0f;
+    private float semiLightViewDistance= 12.0f;
+    private float lightViewDistance = 20.0f;
+
     public Transform eyes;
     private Animator animator;
     private NavMeshAgent navMeshAgent;
@@ -36,8 +39,10 @@ public class LookForIntruders : MonoBehaviour
 
     private RaycastHit[] TryToFindPlayer()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(eyes.position, lookRadius, transform.forward, lookDistance);
-        Debug.DrawRay(eyes.position, transform.forward * lookDistance, Color.red);
+        RaycastHit[] hits = Physics.SphereCastAll(eyes.position, lookRadius, transform.forward, lightViewDistance);
+        Debug.DrawRay(eyes.position, transform.forward * lightViewDistance, Color.red);
+        Debug.DrawRay(eyes.position + new Vector3(0.0f,0.1f,0.0f), transform.forward * semiLightViewDistance, Color.green);
+        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.2f, 0.0f), transform.forward * darkViewDistance, Color.blue);
         return hits;
     }
 
@@ -60,7 +65,7 @@ public class LookForIntruders : MonoBehaviour
         {
             foreach (var hit in hits)
             {
-                if (hit.collider.CompareTag("Player"))
+                if (hit.collider.CompareTag("Player") && CanSee(hit.transform.GetComponent<Visibility>()))
                 {
                     navMeshAgent.isStopped = true;
                     target = hit.transform;
@@ -71,5 +76,23 @@ public class LookForIntruders : MonoBehaviour
                 }
             }
         }
+    }
+
+    private bool CanSee(Visibility target)
+    {
+        float distance = Vector3.Distance(transform.position,target.transform.position);
+        switch (target.Get())
+        {
+            case 0:
+                return distance <= darkViewDistance;
+                break;
+            case 1:
+                return distance <= semiLightViewDistance;
+                break;
+            default:
+                return distance <= lightViewDistance;
+                break;
+        }
+
     }
 }
