@@ -22,10 +22,8 @@ public class PatrolStations : MonoBehaviour
     {
         if (patrolling)
         {
-            navMeshAgent.isStopped = true;
-            SetNewDestinationIfNeeded();
+            ChangeCurrentStationIfNeeded();
             navMeshAgent.destination = currentStation.position;
-            navMeshAgent.isStopped = false;
         }
     }
 
@@ -39,11 +37,11 @@ public class PatrolStations : MonoBehaviour
         patrolling = false;
     }
 
-    private void SetNewDestinationIfNeeded()
+    private void ChangeCurrentStationIfNeeded()
     {
-        if (Vector3.Distance(transform.position, currentStation.position) < 1.0f)
+        if (CloseEnough())
         {
-            if (stations.IndexOf(currentStation) == stations.Count - 1)
+            if (IsOnLastStation())
             {
                 currentStation = stations[0];
             }
@@ -54,5 +52,15 @@ public class PatrolStations : MonoBehaviour
             animator.SetBool("isOnPatrolPoint",true);
 
         }
+    }
+
+    private bool IsOnLastStation()
+    {
+        return stations.IndexOf(currentStation) == stations.Count - 1;
+    }
+
+    private bool CloseEnough()
+    {
+        return Vector3.Distance(transform.position, currentStation.position) < 1.0f;
     }
 }
