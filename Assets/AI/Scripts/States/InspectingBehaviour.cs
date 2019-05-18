@@ -3,37 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WaitingBehaviour : StateMachineBehaviour
+public class InspectingBehaviour : StateMachineBehaviour
 {
-    [SerializeField]
-    private float waitingTime = 5.0f;
-
-    private float timer = 0.0f;
-   // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timer = 0.0f;
-        animator.GetComponent<NavMeshAgent>().isStopped = true;
+        animator.GetComponent<NavMeshAgent>().speed = 1.5f;
+        animator.GetComponent<NavMeshAgent>().angularSpeed = 240.0f;
+        animator.GetComponent<NavMeshAgent>().isStopped = false;
+
+        animator.GetComponent<Ears>().StartFollowingSound();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if (timer < waitingTime)
-        {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            animator.SetBool("isPatrolling",true);
-            animator.SetBool("isOnPatrolPoint",false);
-        }
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        animator.GetComponent<Ears>().StopFollowingSound();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

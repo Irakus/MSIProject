@@ -13,6 +13,7 @@ public class ChasingBehaviour : StateMachineBehaviour
         animator.GetComponent<NavMeshAgent>().speed = 3.0f;
         animator.GetComponent<NavMeshAgent>().angularSpeed = 360.0f;
         animator.GetComponent<NavMeshAgent>().acceleration = 10.0f;
+        animator.GetComponent<NavMeshAgent>().isStopped = false;
         animator.gameObject.transform.Find("AngryPersonnelVoice").gameObject.GetComponent<AudioSource>().Play();
     }
 

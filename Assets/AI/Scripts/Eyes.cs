@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class LookForIntruders : MonoBehaviour
+public class Eyes : MonoBehaviour
 {
     public float lookRadius = 2.0f;
     private float darkViewDistance = 6.0f;
@@ -67,10 +67,8 @@ public class LookForIntruders : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Player") && CanSee(hit.transform.GetComponent<Visibility>()))
                 {
-                    navMeshAgent.isStopped = true;
                     target = hit.transform;
                     navMeshAgent.destination = target.position;
-                    navMeshAgent.isStopped = false;
                     this.timeToChase = 10.0f;
                     break;
                 }

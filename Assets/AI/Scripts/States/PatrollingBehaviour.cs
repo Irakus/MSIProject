@@ -11,8 +11,12 @@ public class PatrollingBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<NavMeshAgent>().speed = 1.0f;
+        animator.GetComponent<NavMeshAgent>().angularSpeed = 120.0f;
+        animator.GetComponent<NavMeshAgent>().isStopped = false;
+
         patrolStations = animator.gameObject.GetComponent<PatrolStations>();
         patrolStations.StartPatrolling();
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -25,7 +29,6 @@ public class PatrollingBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         patrolStations.StopPatrolling();
-        animator.GetComponent<NavMeshAgent>().isStopped = true;
         animator.SetBool("isPatrolling", false);
     }
 
