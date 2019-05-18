@@ -127,33 +127,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &8801765754870529153
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123759365766956487}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 0.37}
-  m_Center: {x: 0.5, y: 0, z: 0}
---- !u!114 &5830965172432691137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123759365766956487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50da61a9535fc2a4794bcf49e0ecf4f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _closeAudio: {fileID: 711292994733171601}
-  _openAudio: {fileID: 299566088286679300}
 --- !u!1 &6158591923679822655
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +254,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8801765754870529153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123759365766956487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.37}
+  m_Center: {x: 0.5, y: 0, z: 0}
+--- !u!114 &5830965172432691137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123759365766956487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50da61a9535fc2a4794bcf49e0ecf4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _closeAudio: {fileID: 711292994733171601}
+  _openAudio: {fileID: 299566088286679300}
+--- !u!208 &6576851834800671084
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123759365766956487}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1.135, z: 0.12}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.5, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8443856697404419080
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,22 +339,22 @@ PrefabInstance:
     - target: {fileID: 9209948105190568812, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_Name
-      value: Interactable Lab Door
+      value: Lab Door (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.311
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.897
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.819
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
@@ -348,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.008938182
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
@@ -358,7 +374,7 @@ PrefabInstance:
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99996006
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
@@ -373,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -1.024
       objectReference: {fileID: 0}
     - target: {fileID: 9209948105190568813, guid: 0dbe5a32790fe53478ae85ae5657c7bc,
         type: 3}
