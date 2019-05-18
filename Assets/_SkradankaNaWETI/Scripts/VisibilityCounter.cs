@@ -13,8 +13,7 @@ public class VisibilityCounter : MonoBehaviour
     private static Color mediumColour = new Color(0.6f, 0.6f, 0.6f);
     private static Color lightColour = Color.white;
 
-    float smoothTime = 1f;
-    float yVelocity = 0.0f;
+    private const float smoothTime = 1f;
 
     internal void Show(int value)
     {
@@ -38,7 +37,7 @@ public class VisibilityCounter : MonoBehaviour
     IEnumerator FadeToDark()
     {
         var startTime = Time.time;
-        while (Mathf.Abs(image.color.grayscale - darkColour.grayscale) > 0.01f)
+        while (Time.time - startTime < smoothTime)
         {
             image.color = Color.Lerp(image.color, darkColour, (Time.time-startTime)/smoothTime);
             yield return null;
@@ -48,7 +47,7 @@ public class VisibilityCounter : MonoBehaviour
     IEnumerator FadeToMedium()
     {
         var startTime = Time.time;
-        while (Mathf.Abs(image.color.grayscale - mediumColour.grayscale) > 0.01f)
+        while (Time.time - startTime < smoothTime)
         {
             image.color = Color.Lerp(image.color, mediumColour, (Time.time - startTime) / smoothTime);
             yield return null;
@@ -58,7 +57,7 @@ public class VisibilityCounter : MonoBehaviour
     IEnumerator FadeToLight()
     {
         var startTime = Time.time;
-        while (Mathf.Abs(image.color.grayscale - lightColour.grayscale) >0.01f)
+        while (Time.time - startTime < smoothTime)
         {
             image.color = Color.Lerp(image.color, lightColour, (Time.time - startTime) / smoothTime);
             yield return null;

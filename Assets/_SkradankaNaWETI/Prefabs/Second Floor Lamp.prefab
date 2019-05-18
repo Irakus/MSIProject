@@ -72,16 +72,6 @@ PrefabInstance:
       propertyPath: customDistanceFalloffThreshold
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3911023436886857338, guid: 777b3b1149ce0a141b9a0bca87b5f799,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3911023436886857338, guid: 777b3b1149ce0a141b9a0bca87b5f799,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2054430572105798752, guid: 777b3b1149ce0a141b9a0bca87b5f799,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -106,6 +96,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lightmapping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303468796573029360, guid: 777b3b1149ce0a141b9a0bca87b5f799,
+        type: 3}
+      propertyPath: shadowMapRenderTexture
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777b3b1149ce0a141b9a0bca87b5f799, type: 3}
