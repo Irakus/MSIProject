@@ -20,17 +20,11 @@ public class Ears : MonoBehaviour
 
         followSound = false;
     }
-    public void Hear(Transform noise)
-    {
-        animator.SetBool("heardSomething",true);
-        target = noise;
-    }
-
     void Update()
     {
         if (followSound)
         {
-            if (Vector3.Distance(transform.position, target.position) < 2.0f)
+            if (IsCloseEnoughToNoiseSource())
             {
                 animator.SetBool("heardSomething", false);
                 return;
@@ -38,6 +32,17 @@ public class Ears : MonoBehaviour
 
             navMeshAgent.destination = target.position;
         }
+    }
+
+    public void Hear(Transform noise)
+    {
+        animator.SetBool("heardSomething", true);
+        target = noise;
+    }
+
+    private bool IsCloseEnoughToNoiseSource()
+    {
+        return Vector3.Distance(transform.position, target.position) < 2.0f;
     }
 
     public void StartFollowingSound()
