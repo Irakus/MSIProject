@@ -17,6 +17,7 @@ public class Blackout : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image.CrossFadeAlpha(0, 3f, true);
+        image.CrossFadeAlpha(0, 5f, false);
     }
+    
 }
