@@ -16,10 +16,11 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     private static float actionTime = 0.5f;
     [SerializeField] private AudioSource _closeAudio;
     [SerializeField] private AudioSource _openAudio;
-
+    private Noise _noise;
 
     private void Awake()
     {
+        _noise = GetComponent<Noise>();
         _status = DoorStatus.Closed;
         _closedRotation = transform.rotation;
         _openRotation = transform.rotation * Quaternion.Euler(0, 90, 0);
@@ -51,6 +52,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     {
         _status = DoorStatus.Inbetween;
         _closeAudio.Play();
+        _noise.MakeNoise(8f);
         var startTime = Time.time;
         while (Time.time - startTime < actionTime)
         {
@@ -64,6 +66,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     {
         _status = DoorStatus.Inbetween;
         _openAudio.Play();
+        _noise.MakeNoise(8f);
         var startTime = Time.time;
         while (Time.time-startTime<actionTime)
         {
