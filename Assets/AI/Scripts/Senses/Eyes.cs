@@ -25,7 +25,7 @@ public class Eyes : MonoBehaviour
     {
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         animator = gameObject.GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("PlayerHead").transform;
     }
 
     // Update is called once per frame
