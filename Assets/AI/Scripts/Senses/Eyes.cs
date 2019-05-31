@@ -21,7 +21,7 @@ public class Eyes : MonoBehaviour
     private Transform player;
 
 
-    void Awake()
+    void Start()
     {
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         animator = gameObject.GetComponent<Animator>();
@@ -31,7 +31,7 @@ public class Eyes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInRange())
+        if (PlayerInFront())
         {
 
             CheckIfSeePlayer();
@@ -46,50 +46,30 @@ public class Eyes : MonoBehaviour
     private void CheckIfSeePlayer()
     {
         RaycastHit hit;
-        Physics.Raycast(eyes.position, player.position,out hit, lightViewDistance);
-        if (hit.collider.CompareTag("Player") && CanSee(hit.transform.GetComponent<Visibility>()))
+        Physics.Raycast(eyes.position, player.position - eyes.position, out hit, lightViewDistance);
+        DrawDebugRays();
+        if (HitIsVisiblePlayer(hit))
         {
             UpdateChaseInfo(hit);
         }
     }
 
-    private bool PlayerInRange()
+    private bool PlayerInFront()
     {
         Debug.Log("The angle between AI and player is " + Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized));
-        if (Vector3.Distance(eyes.position, player.position) <= lightViewDistance
-            && Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized )>= -90.0f
-            && Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized) <= 90.0f) return true;
+        if (Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized) <= 90.0f) return true;
         else return false;
     }
-
-    private RaycastHit[] TryToFindPlayer()
-    {
-        RaycastHit[] hits = Physics.SphereCastAll(eyes.position, lookRadius, transform.forward, lightViewDistance);
-        DrawDebugRays();
-        return hits;
-    }
-
     private void DrawDebugRays()
     {
-        Debug.DrawRay(eyes.position - eyes.right.normalized * lookRadius / 2 - eyes.up.normalized * lookRadius / 2, transform.forward * lightViewDistance, Color.red);
-        Debug.DrawRay(eyes.position - eyes.right.normalized * lookRadius / 2 + eyes.up.normalized * lookRadius / 2, transform.forward * lightViewDistance, Color.red);
-        Debug.DrawRay(eyes.position + eyes.right.normalized * lookRadius / 2 - eyes.up.normalized * lookRadius / 2, transform.forward * lightViewDistance, Color.red);
-        Debug.DrawRay(eyes.position + eyes.right.normalized * lookRadius / 2 + eyes.up.normalized * lookRadius / 2, transform.forward * lightViewDistance, Color.red);
+        Vector3 eyes1 = eyes.position;
 
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.1f, 0.0f) - eyes.right.normalized * lookRadius / 2 - eyes.up.normalized * lookRadius / 2, transform.forward * semiLightViewDistance,
-            Color.green);
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.1f, 0.0f) - eyes.right.normalized * lookRadius / 2 + eyes.up.normalized * lookRadius / 2, transform.forward * semiLightViewDistance,
-            Color.green);
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.1f, 0.0f) + eyes.right.normalized * lookRadius / 2 - eyes.up.normalized * lookRadius / 2, transform.forward * semiLightViewDistance,
-            Color.green);
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.1f, 0.0f) + eyes.right.normalized * lookRadius / 2 + eyes.up.normalized * lookRadius / 2, transform.forward * semiLightViewDistance,
-            Color.green);
+        Vector3 eyes2 = eyes.position + new Vector3(0.0f, 0.1f, 0.0f);
+        Vector3 eyes3 = eyes.position + new Vector3(0.0f, 0.2f, 0.0f);
 
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.2f, 0.0f) - eyes.right.normalized * lookRadius / 2 - eyes.up.normalized * lookRadius / 2, transform.forward * darkViewDistance, Color.blue);
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.2f, 0.0f) - eyes.right.normalized * lookRadius / 2 + eyes.up.normalized * lookRadius / 2, transform.forward * darkViewDistance, Color.blue);
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.2f, 0.0f) + eyes.right.normalized * lookRadius / 2 - eyes.up.normalized * lookRadius / 2, transform.forward * darkViewDistance, Color.blue);
-        Debug.DrawRay(eyes.position + new Vector3(0.0f, 0.2f, 0.0f) + eyes.right.normalized * lookRadius / 2 + eyes.up.normalized * lookRadius / 2, transform.forward * darkViewDistance, Color.blue);
-
+        Debug.DrawRay(eyes1, (player.position - eyes1).normalized * lightViewDistance, Color.yellow);
+        Debug.DrawRay(eyes2, ((player.position - eyes2).normalized * semiLightViewDistance), Color.green);
+        Debug.DrawRay(eyes3, (player.position - eyes3).normalized * darkViewDistance, Color.red);
     }
 
     private void UpdateAnimatorChaseTime()
@@ -104,29 +84,7 @@ public class Eyes : MonoBehaviour
             timeToChase -= Time.deltaTime;
         }
     }
-
-    private void CheckIfSeenPlayer(RaycastHit[] hits)
-    {
-        if (hits.Length > 0)
-        {
-            foreach (var hit in hits)
-            {
-                if (SpottedPlayer(hit)) break;
-            }
-        }
-    }
-
-    private bool SpottedPlayer(RaycastHit hit)
-    {
-        if (HitIsVisiblePlayer(hit))
-        {
-            UpdateChaseInfo(hit);
-            return true;
-        }
-
-        return false;
-    }
-
+    
     private void UpdateChaseInfo(RaycastHit hit)
     {
         target = hit.transform;
