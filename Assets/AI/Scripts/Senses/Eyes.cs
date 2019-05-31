@@ -18,23 +18,48 @@ public class Eyes : MonoBehaviour
     [SerializeField]
     private Transform target;
 
+    private Transform player;
 
-    void Start()
+
+    void Awake()
     {
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         animator = gameObject.GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var hits = TryToFindPlayer();
+        if (PlayerInRange())
+        {
 
-        CheckIfSeenPlayer(hits);
-        
-        UpdateLocalChaseTime();
+            CheckIfSeePlayer();
 
-        UpdateAnimatorChaseTime();
+            UpdateLocalChaseTime();
+
+            UpdateAnimatorChaseTime();
+        }
+
+    }
+
+    private void CheckIfSeePlayer()
+    {
+        RaycastHit hit;
+        Physics.Raycast(eyes.position, player.position,out hit, lightViewDistance);
+        if (hit.collider.CompareTag("Player") && CanSee(hit.transform.GetComponent<Visibility>()))
+        {
+            UpdateChaseInfo(hit);
+        }
+    }
+
+    private bool PlayerInRange()
+    {
+        Debug.Log("The angle between AI and player is " + Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized));
+        if (Vector3.Distance(eyes.position, player.position) <= lightViewDistance
+            && Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized )>= -90.0f
+            && Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized) <= 90.0f) return true;
+        else return false;
     }
 
     private RaycastHit[] TryToFindPlayer()
