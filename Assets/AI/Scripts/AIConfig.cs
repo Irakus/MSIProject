@@ -23,7 +23,7 @@ public class AIConfig : MonoBehaviour
                 voicePack = GameObject.Find("VoicePacks/FemaleJanotor").GetComponent<VoicePack>();
                 break;
             case CharacterConfig.MaleBodyguard:
-                //avatar.activeRace.name = "HumanMale";
+                avatar.activeRace.name = "HumanMale";
                 voicePack = GameObject.Find("VoicePacks/MaleBodyguard").GetComponent<VoicePack>();
                 break;
             default:
