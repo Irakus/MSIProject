@@ -11,6 +11,8 @@ public class AIConfig : MonoBehaviour
     [SerializeField]
     private CharacterConfig characterConfig;
 
+    private float walkSpeed;
+    private float runSpeed;
     enum CharacterConfig{ MaleBodyguard, FemaleJanitor }
     void Awake()
     {

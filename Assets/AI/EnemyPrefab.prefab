@@ -1372,7 +1372,7 @@ MonoBehaviour:
   loadBlendShapes: 0
   activeRace:
     name: HumanMale
-  defaultChangeRaceOptions: 8
+  defaultChangeRaceOptions: 0
   cacheCurrentState: 1
   rebuildSkeleton: 0
   preloadWardrobeRecipes:
@@ -1419,11 +1419,16 @@ MonoBehaviour:
       _compatibleRaces:
       - HumanMale
       - HumanMaleDCS
-    - _recipeName: MaleJeans
+    - _recipeName: TallShoes_Black_Recipe
       _compatibleRaces:
-      - HumanMaleDCS
       - HumanMale
-    - _recipeName: MaleShirt2
+      - HumanMaleDCS
+      - HumanMaleHighPoly
+    - _recipeName: MaleHoodie_Recipe
+      _compatibleRaces:
+      - HumanMale
+      - HumanMaleDCS
+    - _recipeName: MaleSweatPants_Recipe
       _compatibleRaces:
       - HumanMale
       - HumanMaleDCS
