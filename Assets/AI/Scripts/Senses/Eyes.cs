@@ -33,14 +33,11 @@ public class Eyes : MonoBehaviour
     {
         if (PlayerInFront())
         {
-
             CheckIfSeePlayer();
-
-            UpdateLocalChaseTime();
-
-            UpdateAnimatorChaseTime();
         }
 
+        UpdateLocalChaseTime();
+        UpdateAnimatorChaseTime();
     }
 
     private void CheckIfSeePlayer()
@@ -56,7 +53,6 @@ public class Eyes : MonoBehaviour
 
     private bool PlayerInFront()
     {
-        Debug.Log("The angle between AI and player is " + Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized));
         if (Vector3.Angle(eyes.forward.normalized, (player.position - eyes.position).normalized) <= 90.0f) return true;
         else return false;
     }
@@ -87,7 +83,7 @@ public class Eyes : MonoBehaviour
     
     private void UpdateChaseInfo(RaycastHit hit)
     {
-        target = hit.transform;
+        target = player;
         navMeshAgent.destination = target.position;
         this.timeToChase = 10.0f;
     }

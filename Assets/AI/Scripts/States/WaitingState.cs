@@ -9,9 +9,16 @@ public class WaitingState : StateMachineBehaviour
     private float waitingTime = 5.0f;
 
     private float timer = 0.0f;
-   // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+
+    [SerializeField]
+    private VoicePack voicePack;
+    [SerializeField]
+    private float voiceDelay;
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        
+        voicePack = animator.GetComponent<AIConfig>().voicePack;
         timer = 0.0f;
         animator.GetComponent<NavMeshAgent>().isStopped = true;
     }

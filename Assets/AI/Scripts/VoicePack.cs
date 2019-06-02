@@ -21,28 +21,28 @@ public class VoicePack : MonoBehaviour
 
     public void PlaySpotted()
     {
-        currentlyPlaying.Stop();
-        currentlyPlaying = spottedTracks[Random.Range(0, spottedTracks.Count - 1)];
+        if (currentlyPlaying) currentlyPlaying.Stop();
+        currentlyPlaying = spottedTracks[Random.Range(0, spottedTracks.Count)];
         currentlyPlaying.Play();
     }
 
 
     public void PlayCasual()
     {
-        currentlyPlaying = casualTracks[Random.Range(0, casualTracks.Count - 1)];
+        currentlyPlaying = casualTracks[Random.Range(0, casualTracks.Count)];
         currentlyPlaying.Play();
     }
 
     public void PlayChasing()
     {
-        currentlyPlaying = chasingTracks[Random.Range(0, chasingTracks.Count - 1)];
+        currentlyPlaying = chasingTracks[Random.Range(0, chasingTracks.Count)];
         currentlyPlaying.Play();
     }
 
     public void PlayLost()
     {
-        currentlyPlaying.Stop();
-        currentlyPlaying = lostTracks[Random.Range(0, lostTracks.Count - 1)];
+        if (currentlyPlaying) currentlyPlaying.Stop();
+        currentlyPlaying = lostTracks[Random.Range(0, lostTracks.Count)];
         currentlyPlaying.Play();
     }
 
@@ -57,6 +57,6 @@ public class VoicePack : MonoBehaviour
     }
     void Update()
     {
-        if (!currentlyPlaying.isPlaying) currentlyPlaying = null;
+        if (currentlyPlaying && !currentlyPlaying.isPlaying) currentlyPlaying = null;
     }
 }
