@@ -12,6 +12,7 @@ public class ChasingState : StateMachineBehaviour
     private VoicePack voicePack;
     [SerializeField]
     private float voiceDelay;
+    
 
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,7 +23,7 @@ public class ChasingState : StateMachineBehaviour
         animator.GetComponent<NavMeshAgent>().acceleration = 10.0f;
         animator.GetComponent<NavMeshAgent>().isStopped = false;
         voicePack.PlaySpotted();
-        voiceDelay = Random.Range(5.0f,10.0f);
+        voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -31,7 +32,7 @@ public class ChasingState : StateMachineBehaviour
         voiceDelay -= Time.deltaTime;
         if (voiceDelay <= 0)
         {
-            voiceDelay = Random.Range(5.0f, 10.0f);
+            voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
             voicePack.PlayChasing();
         }
     }
