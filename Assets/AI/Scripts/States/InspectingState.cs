@@ -18,7 +18,7 @@ public class InspectingState : StateMachineBehaviour
         animator.GetComponent<NavMeshAgent>().isStopped = false;
 
         animator.GetComponent<Ears>().StartFollowingSound();
-        voiceDelay = Random.Range(5.0f,10.0f);
+        voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -26,7 +26,7 @@ public class InspectingState : StateMachineBehaviour
         voiceDelay -= Time.deltaTime;
         if (voiceDelay <= 0)
         {
-            voiceDelay = Random.Range(5.0f,10.0f);
+            voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
             voicePack.PlayCasual();
         }
     }
