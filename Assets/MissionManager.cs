@@ -9,18 +9,30 @@ public class MissionManager : MonoBehaviour
     bool goalFulfilled = false, escaped = false;
     int missionNumber;
     [SerializeField] Transform[] startSpots;
+    [SerializeField] Cloak cloak;
+    [SerializeField] GameObject pendriveComputer;
     [SerializeField] ETIFirstPersonController player;
 
     void Awake()
     {
         missionNumber = MissionNumber.Get();
-        if (missionNumber == 2)
-            goalFulfilled = true;
+        switch (missionNumber)
+        {
+            case 1:
+                pendriveComputer.SetActive(true);
+            break;
+            case 2:
+                goalFulfilled = true;
+            break;
+            case 3:
+                cloak.gameObject.SetActive(true);
+            break;
+        }
 
         player.transform.position = startSpots[missionNumber].position;
         player.transform.rotation = startSpots[missionNumber].rotation;
         player.GetComponent<CharacterController>().enabled = true;
-
+        
     }
 
     internal void Escaped()

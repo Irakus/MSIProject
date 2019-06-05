@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     static string[] missionGoals = {
         "",
         "Odzyskaj zaginionego pendrajwa z laboratorium na 1. piętrze!",
-        "Ucieknij z ETI!"
+        "Ucieknij z ETI!",
+        "Zabierz z szatni swoją kurtkę!"
     };
     public Transform player;
     private bool pendriveTaken = false;
