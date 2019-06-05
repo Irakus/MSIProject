@@ -17,7 +17,7 @@ public class OutsideTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.FindObjectOfType<GameManager>().Escaped();
+        GameObject.FindObjectOfType<MissionManager>().Escaped();
         StopCoroutine("ActivateLpf");
         StartCoroutine("RemoveLpf");
     }

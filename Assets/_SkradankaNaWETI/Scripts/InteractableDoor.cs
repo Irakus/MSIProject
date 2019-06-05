@@ -52,7 +52,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     {
         _status = DoorStatus.Inbetween;
         _closeAudio.Play();
-        _noise.MakeNoise(8f);
+        _noise.MakeNoise(5f);
         var startTime = Time.time;
         while (Time.time - startTime < actionTime)
         {

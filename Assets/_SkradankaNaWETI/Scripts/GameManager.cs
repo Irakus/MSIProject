@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    static string[] missionGoals = {
+        "",
+        "Odzyskaj zaginionego pendrajwa z laboratorium na 1. piętrze!",
+        "Ucieknij z ETI!"
+    };
     public Transform player;
     private bool pendriveTaken = false;
     private bool playerWasted = false;
@@ -25,34 +30,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void PendriveTaken()
-    {
-        pendriveTaken = true;
-    }
-
-    public void Escaped()
-    {
-        if (!playerWasted)
-        {
-            if (pendriveTaken)
-            {
-                text.text = "Misja wygrana!";
-                startTime = Time.time;
-                Debug.Log("Misja wygrana!");
-            }
-            else
-            {
-                text.text = "Cofnij się po pendriva!";
-                startTime = Time.time;
-                Debug.Log("Cofnij się po pendriva!");
-            }
-        }
-    }
-
     void Start()
     {
         text = description.GetComponent<Text>();
-        text.text = "Start";
+        text.text = missionGoals[MissionNumber.Get()];
         startTime = Time.time;
     }
 
