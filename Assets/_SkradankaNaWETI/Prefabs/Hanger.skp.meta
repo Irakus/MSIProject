@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: 98ea2391a39f51d4da50c5f5dbcbae45
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 3a6bae74b9bf22e9505cc0bb0441d9c0
+  longitude: -105.242139
+  latitude: 40.018309
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 0.39802617, y: 1.7442958, z: -3.3189368}
+      lookAt: {x: 5.080521, y: -1.3491818, z: 9.404636}
+      up: {x: 0.07682856, y: 0.9749437, z: 0.20876345}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Component
+    100002: Component 1
+    100004: Component 10
+    100006: Component 11
+    100008: Component 12
+    100010: Component 13
+    100012: Component 14
+    100014: Component 15
+    100016: Component 16
+    100018: Component 17
+    100020: Component 18
+    100022: Component 19
+    100024: Component 2
+    100026: Component 20
+    100028: Component 21
+    100030: Component 22
+    100032: Component 23
+    100034: Component 3
+    100036: Component 4
+    100038: Component 5
+    100040: Component 6
+    100042: Component 7
+    100044: Component 8
+    100046: Component 9
+    100048: Group 1
+    100050: Group 11
+    100052: Group 13
+    100054: Group 15
+    100056: Group 17
+    100058: Group 3
+    100060: Group 5
+    100062: Group 7
+    100064: Group 9
+    100066: //RootNode
+    100068: SimpleCoatHook
+    100070: SimpleCoatHook 1
+    100072: SimpleCoatHook 10
+    100074: SimpleCoatHook 11
+    100076: SimpleCoatHook 12
+    100078: SimpleCoatHook 13
+    100080: SimpleCoatHook 14
+    100082: SimpleCoatHook 15
+    100084: SimpleCoatHook 16
+    100086: SimpleCoatHook 17
+    100088: SimpleCoatHook 18
+    100090: SimpleCoatHook 19
+    100092: SimpleCoatHook 2
+    100094: SimpleCoatHook 20
+    100096: SimpleCoatHook 21
+    100098: SimpleCoatHook 22
+    100100: SimpleCoatHook 23
+    100102: SimpleCoatHook 3
+    100104: SimpleCoatHook 4
+    100106: SimpleCoatHook 5
+    100108: SimpleCoatHook 6
+    100110: SimpleCoatHook 7
+    100112: SimpleCoatHook 8
+    100114: SimpleCoatHook 9
+    400000: Component
+    400002: Component 1
+    400004: Component 10
+    400006: Component 11
+    400008: Component 12
+    400010: Component 13
+    400012: Component 14
+    400014: Component 15
+    400016: Component 16
+    400018: Component 17
+    400020: Component 18
+    400022: Component 19
+    400024: Component 2
+    400026: Component 20
+    400028: Component 21
+    400030: Component 22
+    400032: Component 23
+    400034: Component 3
+    400036: Component 4
+    400038: Component 5
+    400040: Component 6
+    400042: Component 7
+    400044: Component 8
+    400046: Component 9
+    400048: Group 1
+    400050: Group 11
+    400052: Group 13
+    400054: Group 15
+    400056: Group 17
+    400058: Group 3
+    400060: Group 5
+    400062: Group 7
+    400064: Group 9
+    400066: //RootNode
+    400068: SimpleCoatHook
+    400070: SimpleCoatHook 1
+    400072: SimpleCoatHook 10
+    400074: SimpleCoatHook 11
+    400076: SimpleCoatHook 12
+    400078: SimpleCoatHook 13
+    400080: SimpleCoatHook 14
+    400082: SimpleCoatHook 15
+    400084: SimpleCoatHook 16
+    400086: SimpleCoatHook 17
+    400088: SimpleCoatHook 18
+    400090: SimpleCoatHook 19
+    400092: SimpleCoatHook 2
+    400094: SimpleCoatHook 20
+    400096: SimpleCoatHook 21
+    400098: SimpleCoatHook 22
+    400100: SimpleCoatHook 23
+    400102: SimpleCoatHook 3
+    400104: SimpleCoatHook 4
+    400106: SimpleCoatHook 5
+    400108: SimpleCoatHook 6
+    400110: SimpleCoatHook 7
+    400112: SimpleCoatHook 8
+    400114: SimpleCoatHook 9
+    2100000: _defaultMat
+    2100002: ZEBRANO SAND
+    2100004: '[Color M02]'
+    2100006: '[Color M09]'
+    2100008: Metal_Aluminum_Anodized
+    2300000: Group 1
+    2300002: Group 11
+    2300004: Group 13
+    2300006: Group 15
+    2300008: Group 17
+    2300010: Group 3
+    2300012: Group 5
+    2300014: Group 7
+    2300016: Group 9
+    2300018: SimpleCoatHook
+    2300020: SimpleCoatHook 1
+    2300022: SimpleCoatHook 10
+    2300024: SimpleCoatHook 11
+    2300026: SimpleCoatHook 12
+    2300028: SimpleCoatHook 13
+    2300030: SimpleCoatHook 14
+    2300032: SimpleCoatHook 15
+    2300034: SimpleCoatHook 16
+    2300036: SimpleCoatHook 17
+    2300038: SimpleCoatHook 18
+    2300040: SimpleCoatHook 19
+    2300042: SimpleCoatHook 2
+    2300044: SimpleCoatHook 20
+    2300046: SimpleCoatHook 21
+    2300048: SimpleCoatHook 22
+    2300050: SimpleCoatHook 23
+    2300052: SimpleCoatHook 3
+    2300054: SimpleCoatHook 4
+    2300056: SimpleCoatHook 5
+    2300058: SimpleCoatHook 6
+    2300060: SimpleCoatHook 7
+    2300062: SimpleCoatHook 8
+    2300064: SimpleCoatHook 9
+    3300000: Group 1
+    3300002: Group 11
+    3300004: Group 13
+    3300006: Group 15
+    3300008: Group 17
+    3300010: Group 3
+    3300012: Group 5
+    3300014: Group 7
+    3300016: Group 9
+    3300018: SimpleCoatHook
+    3300020: SimpleCoatHook 1
+    3300022: SimpleCoatHook 10
+    3300024: SimpleCoatHook 11
+    3300026: SimpleCoatHook 12
+    3300028: SimpleCoatHook 13
+    3300030: SimpleCoatHook 14
+    3300032: SimpleCoatHook 15
+    3300034: SimpleCoatHook 16
+    3300036: SimpleCoatHook 17
+    3300038: SimpleCoatHook 18
+    3300040: SimpleCoatHook 19
+    3300042: SimpleCoatHook 2
+    3300044: SimpleCoatHook 20
+    3300046: SimpleCoatHook 21
+    3300048: SimpleCoatHook 22
+    3300050: SimpleCoatHook 23
+    3300052: SimpleCoatHook 3
+    3300054: SimpleCoatHook 4
+    3300056: SimpleCoatHook 5
+    3300058: SimpleCoatHook 6
+    3300060: SimpleCoatHook 7
+    3300062: SimpleCoatHook 8
+    3300064: SimpleCoatHook 9
+    4300000: Mesh Group 1
+    4300002: Mesh Group 3
+    4300004: Mesh Group 5
+    4300006: Mesh Group 7
+    4300008: Mesh Group 9
+    4300010: Mesh Group 11
+    4300012: Mesh Group 13
+    4300014: Mesh Group 15
+    4300016: Mesh Group 17
+    4300018: Mesh SimpleCoatHook
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
