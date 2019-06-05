@@ -23,6 +23,7 @@ public class ChasingState : StateMachineBehaviour
         animator.GetComponent<NavMeshAgent>().acceleration = 10.0f;
         animator.GetComponent<NavMeshAgent>().isStopped = false;
         voicePack.PlaySpotted();
+        FindObjectOfType<MusicManager>().IncrementChasing();
         voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.maxTalkInterval);
     }
 
@@ -42,6 +43,7 @@ public class ChasingState : StateMachineBehaviour
     {
         animator.SetBool("isPatrolling", true);
         voicePack.PlayLost();
+        FindObjectOfType<MusicManager>().DecrementChasing();
     }
 
 }

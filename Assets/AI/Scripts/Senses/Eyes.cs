@@ -90,7 +90,7 @@ public class Eyes : MonoBehaviour
 
     private bool HitIsVisiblePlayer(RaycastHit hit)
     {
-        return hit.collider.CompareTag("Player") && CanSee(hit.transform.GetComponent<Visibility>());
+        return hit.collider && hit.collider.CompareTag("Player") && CanSee(hit.transform.GetComponent<Visibility>());
     }
 
     private bool CanSee(Visibility target)
