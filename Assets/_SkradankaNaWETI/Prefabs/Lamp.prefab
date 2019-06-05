@@ -96,7 +96,7 @@ MonoBehaviour:
     type: 3}
   shadowDataRenderTexture: {fileID: 0}
   customDistanceFalloffThreshold: 0
-  customDistanceFalloffPower: 9
+  customDistanceFalloffPower: 16
   storeDirectionalSpotLightCookieMapShader: {fileID: 4800000, guid: ffdac5434c39f7545b910c253007c8fc,
     type: 3}
   customCookieDistanceFalloffStartThreshold: 0.1
