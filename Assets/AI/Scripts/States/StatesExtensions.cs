@@ -7,7 +7,7 @@ namespace StateExt
     {
         public static float GetRandomVoiceDelay(this StateMachineBehaviour stateMachineBehaviour)
         {
-            return Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
+            return Random.Range(AIConfig.minTalkInterval, AIConfig.maxTalkInterval);
         }
     }
 

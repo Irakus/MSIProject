@@ -23,7 +23,7 @@ public class ChasingState : StateMachineBehaviour
         animator.GetComponent<NavMeshAgent>().acceleration = 10.0f;
         animator.GetComponent<NavMeshAgent>().isStopped = false;
         voicePack.PlaySpotted();
-        voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
+        voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.maxTalkInterval);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -32,7 +32,7 @@ public class ChasingState : StateMachineBehaviour
         voiceDelay -= Time.deltaTime;
         if (voiceDelay <= 0)
         {
-            voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
+            voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.maxTalkInterval);
             voicePack.PlayChasing();
         }
     }

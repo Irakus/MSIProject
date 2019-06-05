@@ -20,7 +20,7 @@ public class PatrollingState : StateMachineBehaviour
 
         patrolStations = animator.gameObject.GetComponent<PatrolStations>();
         patrolStations.StartPatrolling();
-        voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
+        voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.maxTalkInterval);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,7 +29,7 @@ public class PatrollingState : StateMachineBehaviour
         voiceDelay -= Time.deltaTime;
         if (voiceDelay <= 0)
         {
-            voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.minTalkInterval);
+            voiceDelay = Random.Range(AIConfig.minTalkInterval, AIConfig.maxTalkInterval);
             voicePack.PlayCasual();
         }
     }

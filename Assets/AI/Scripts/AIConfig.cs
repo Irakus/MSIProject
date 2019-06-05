@@ -14,8 +14,8 @@ public class AIConfig : MonoBehaviour
     private float walkSpeed;
     private float runSpeed;
 
-    static readonly public float minTalkInterval = 7.0f;
-    static readonly public float maxTalkInterval = 12.0f;
+    static readonly public float minTalkInterval = 10.0f;
+    static readonly public float maxTalkInterval = 25.0f;
     enum CharacterConfig{ MaleBodyguard, FemaleJanitor }
     void Awake()
     {
