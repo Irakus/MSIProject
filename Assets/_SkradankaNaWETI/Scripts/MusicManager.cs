@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     private AudioSource aggresiveMusic;
 
-
+    [SerializeField]
     private static int chasingEnemies = 0;
     private static readonly float volume = 0.1f;
     private static readonly float fadeTime = 5.0f;
@@ -18,6 +18,7 @@ public class MusicManager : MonoBehaviour
     {
         passiveMusic.volume = volume;
         aggresiveMusic.volume = 0.0f;
+        chasingEnemies = 0;
     }
 
     public void IncrementChasing()
