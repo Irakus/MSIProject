@@ -41,7 +41,8 @@ public class MissionManager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("missionsCleared") < missionNumber)
                 PlayerPrefs.SetInt("missionsCleared", missionNumber);
-        SceneManager.LoadScene(0);
+            EndScreenType.Set(1);
+            SceneManager.LoadScene(2);
         }
     }
 

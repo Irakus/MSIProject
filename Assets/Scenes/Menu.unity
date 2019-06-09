@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -541,7 +541,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Opcje
+  m_text: 'Wyniki
 
 '
   m_isRightToLeft: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.000030517578, w: 0}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 6
+    characterCount: 7
     spriteCount: 0
     spaceCount: 1
     wordCount: 1
@@ -1014,6 +1014,7 @@ MonoBehaviour:
   mission1Button: {fileID: 1804956530}
   mission2Button: {fileID: 1038725108}
   mission3Button: {fileID: 1494510529}
+  score: {fileID: 656283269}
 --- !u!1 &656283268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1027,7 @@ GameObject:
   - component: {fileID: 656283271}
   - component: {fileID: 656283270}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: -9.14}
+  m_SizeDelta: {x: 0, y: -18.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656283270
 MonoBehaviour:
@@ -1071,7 +1072,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Opcje
+  m_text: 'Najlepszy wynik:
 
 '
   m_isRightToLeft: 0
@@ -1101,14 +1102,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_textAlignment: 258
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1142,10 +1143,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.000030517578, w: 0}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 6
+    characterCount: 17
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2066,7 +2067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -346, y: -15.299975}
+  m_AnchoredPosition: {x: -423, y: -15.299975}
   m_SizeDelta: {x: 448.80005, y: 348.21997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1564782330
@@ -2082,7 +2083,7 @@ GameObject:
   - component: {fileID: 1564782333}
   - component: {fileID: 1564782332}
   m_Layer: 5
-  m_Name: OptionsButton
+  m_Name: Scores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2106,7 +2107,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 270.37692, y: 92}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564782332
 MonoBehaviour:
@@ -2131,7 +2132,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.15294118, g: 0.15686275, b: 0.18431373, a: 1}
     m_HighlightedColor: {r: 0.15294118, g: 0.15686275, b: 0.18431373, a: 0.8627451}
     m_PressedColor: {r: 0.15294118, g: 0.15686275, b: 0.18431373, a: 0.7254902}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.15294118, g: 0.15686275, b: 0.18431373, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2143,7 +2144,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1564782333}
   m_OnClick:
     m_PersistentCalls:
@@ -2426,7 +2427,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 611961448}
+      - m_Target: {fileID: 427285816}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2446,7 +2447,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2566,6 +2567,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 427285816}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1969426063}
         m_MethodName: SetActive
         m_Mode: 6
@@ -2576,17 +2588,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 611961448}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2767,7 +2768,7 @@ GameObject:
   - component: {fileID: 1969426064}
   - component: {fileID: 1969426065}
   m_Layer: 0
-  m_Name: OptionMenu
+  m_Name: ScoresMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2804,3 +2805,4 @@ MonoBehaviour:
   mission1Button: {fileID: 0}
   mission2Button: {fileID: 0}
   mission3Button: {fileID: 0}
+  score: {fileID: 656283269}

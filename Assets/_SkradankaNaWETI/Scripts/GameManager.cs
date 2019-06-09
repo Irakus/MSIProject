@@ -13,22 +13,23 @@ public class GameManager : MonoBehaviour
         "Zabierz z szatni swoją kurtkę!"
     };
     public Transform player;
-    private bool pendriveTaken = false;
     private bool playerWasted = false;
 
     public RectTransform description;
     Text text;
 
+    public RectTransform time;
+    Text timeText;
+
     private static float actionTime = 3.0f;
-    private float startTime = 0.0f;
+    private double startTime = 0.0f;
 
     public void PlayerWasted()
     {
         playerWasted = true;
         text.text = "Gracz został złapany!";
-        startTime = Time.time;
-        Debug.Log("Gracz został złapany!");
-        SceneManager.LoadScene(0);
+        EndScreenType.Set(0);
+        SceneManager.LoadScene(2);
     }
 
     void Start()
@@ -40,6 +41,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        timeText = time.GetComponent<Text>();
+        System.TimeSpan t = System.TimeSpan.FromSeconds(Time.time - startTime);
+        Score.Set(Time.time - startTime);
+        timeText.text = string.Format("Czas misji: {1:D2}m {2:D2}s",
+                                t.Hours,
+                                t.Minutes,
+                                t.Seconds,
+                                t.Milliseconds);
+
         if (Time.time - startTime > actionTime)
         {
             text.text = "";
