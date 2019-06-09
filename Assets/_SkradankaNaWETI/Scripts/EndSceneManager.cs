@@ -33,10 +33,34 @@ public class EndSceneManager : MonoBehaviour
                                     t.Minutes,
                                     t.Seconds,
                                     t.Milliseconds);
-            if((float)Score.Get() > PlayerPrefs.GetFloat("Player Score"))
+            bool scoreSet = false;
+            for(int i = 1; i <= 3 && !scoreSet; i++)
             {
-                PlayerPrefs.SetFloat("Player Score", (float)Score.Get());
+                if ((float)Score.Get() < PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + i) || PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + i) == 0)
+                {
+                    if(i == 1)
+                    {
+                        if(PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2) != 0)
+                        {
+                            PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + 3, PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2));
+                            PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + 2, PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 1));
+                        }
+                        
+                    }
+                    else if(i == 2)
+                    {
+                        if(PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 3) != 0)
+                        {
+                            PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + 3, PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2));
+                        }
+                        
+                    }
+                    PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + i, (float)Score.Get());
+                    Debug.Log("Mission" + MissionNumber.Get() + "Score" + i + ": " + (float)Score.Get());
+                    scoreSet = true;
+                }
             }
+            
 
         }
         text.text = endScreenDescription[EndScreenType.Get()];

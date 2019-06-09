@@ -13,6 +13,8 @@ public class MainMenu : MonoBehaviour
 
     public RectTransform score;
     TextMeshProUGUI scoreText;
+   
+ 
 
     public void Start()
     {
@@ -26,13 +28,22 @@ public class MainMenu : MonoBehaviour
         }
         
         scoreText = score.GetComponent<TextMeshProUGUI>();
-        System.TimeSpan t = System.TimeSpan.FromSeconds(PlayerPrefs.GetFloat("Player Score"));
-        scoreText.SetText(string.Format("Najlepszy wynik:\n{1:D2}m {2:D2}s",
+        string scores = "Najlepsze wyniki:\n\n";
+        for (int i = 1; i <= 3; i++)
+        {
+            scores += "Misja " + i + "\n";
+            for (int j = 1; j <= 3; j++)
+            {
+                System.TimeSpan t = System.TimeSpan.FromSeconds(PlayerPrefs.GetFloat("Mission" + i + "Score" + j));
+                scores += string.Format("{1:D2}m {2:D2}s\n",
                                 t.Hours,
                                 t.Minutes,
                                 t.Seconds,
-                                t.Milliseconds));
-
+                                t.Milliseconds);
+            }
+            scores += "\n";
+        }
+        scoreText.SetText(scores);
 
     }
 
