@@ -35,9 +35,6 @@ public class MainMenu : MonoBehaviour
             for (int j = 1; j <= 3; j++)
             {
                 System.TimeSpan t = System.TimeSpan.FromSeconds(PlayerPrefs.GetFloat("Mission" + i + "Score" + j));
-                PlayerPrefs.SetString("Mission" + 1 + "Score" + 1 + "Player", "Kasia");
-                PlayerPrefs.SetString("Mission" + 1 + "Score" + 2 + "Player", "Andrzej");
-                PlayerPrefs.SetString("Mission" + 1 + "Score" + 3 + "Player", "Patryk");
                 string playerName = PlayerPrefs.GetString("Mission" + i + "Score" + j + "Player");
                 if (!playerName.Equals(""))
                 {
