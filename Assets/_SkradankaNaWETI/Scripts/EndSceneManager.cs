@@ -47,13 +47,15 @@ public class EndSceneManager : MonoBehaviour
 
     void saveScore()
     {
-        bool scoreSet = false;
-        for (int i = 1; i <= 3 && !scoreSet; i++)
+        if (EndScreenType.Get() == 1)
         {
-            if ((float)Score.Get() < PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + i) || PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + i) == 0)
+            bool scoreSet = false;
+            for (int i = 1; i <= 3 && !scoreSet; i++)
             {
-                if (i == 1)
+                if ((float)Score.Get() < PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + i) || PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + i) == 0)
                 {
+                    if (i == 1)
+                    {
                         Debug.Log("Mission" + MissionNumber.Get() + " Score" + 3 + ": " + PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2));
                         PlayerPrefs.SetString("Mission" + MissionNumber.Get() + "Score" + 3 + "Player", PlayerPrefs.GetString("Mission" + MissionNumber.Get() + "Score" + 2 + "Player"));
                         PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + 3, PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2));
@@ -61,25 +63,25 @@ public class EndSceneManager : MonoBehaviour
                         Debug.Log("Mission" + MissionNumber.Get() + " Score" + 2 + ": " + PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 1));
                         PlayerPrefs.SetString("Mission" + MissionNumber.Get() + "Score" + 2 + "Player", PlayerPrefs.GetString("Mission" + MissionNumber.Get() + "Score" + 1 + "Player"));
                         PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + 2, PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 1));
-                    
 
-                }
-                else if (i == 2)
-                {
-                    
+
+                    }
+                    else if (i == 2)
+                    {
+
                         Debug.Log("Mission" + MissionNumber.Get() + " Score" + 3 + ": " + PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2));
                         PlayerPrefs.SetString("Mission" + MissionNumber.Get() + "Score" + 3 + "Player", PlayerPrefs.GetString("Mission" + MissionNumber.Get() + "Score" + 2 + "Player"));
                         PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + 3, PlayerPrefs.GetFloat("Mission" + MissionNumber.Get() + "Score" + 2));
-                    
 
+
+                    }
+                    PlayerPrefs.SetString("Mission" + MissionNumber.Get() + "Score" + i + "Player", this.nameInput.text);
+                    PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + i, (float)Score.Get());
+                    Debug.Log("Mission" + MissionNumber.Get() + " Score" + i + ": " + (float)Score.Get());
+                    scoreSet = true;
                 }
-                PlayerPrefs.SetString("Mission" + MissionNumber.Get() + "Score" + i + "Player", this.nameInput.text);
-                PlayerPrefs.SetFloat("Mission" + MissionNumber.Get() + "Score" + i, (float)Score.Get());
-                Debug.Log("Mission" + MissionNumber.Get() + " Score" + i + ": " + (float)Score.Get());
-                scoreSet = true;
             }
-        }
-        
+        }        
     }
 
     // Update is called once per frame
